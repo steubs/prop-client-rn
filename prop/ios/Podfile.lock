@@ -1,0 +1,98 @@
+PODS:
+  - boost-for-react-native (1.63.0)
+  - DoubleConversion (1.1.5)
+  - Folly (2018.10.22.00):
+    - boost-for-react-native
+    - DoubleConversion
+    - glog
+  - glog (0.3.4)
+  - React (0.59.8):
+    - React/Core (= 0.59.8)
+  - react-native-mapbox-gl (7.0.0):
+    - React
+  - React/Core (0.59.8):
+    - yoga (= 0.59.8.React)
+  - React/DevSupport (0.59.8):
+    - React/Core
+    - React/RCTWebSocket
+  - React/fishhook (0.59.8)
+  - React/RCTActionSheet (0.59.8):
+    - React/Core
+  - React/RCTAnimation (0.59.8):
+    - React/Core
+  - React/RCTBlob (0.59.8):
+    - React/Core
+  - React/RCTCameraRoll (0.59.8):
+    - React/Core
+    - React/RCTImage
+  - React/RCTGeolocation (0.59.8):
+    - React/Core
+  - React/RCTImage (0.59.8):
+    - React/Core
+    - React/RCTNetwork
+  - React/RCTLinkingIOS (0.59.8):
+    - React/Core
+  - React/RCTNetwork (0.59.8):
+    - React/Core
+  - React/RCTPushNotification (0.59.8):
+    - React/Core
+  - React/RCTSettings (0.59.8):
+    - React/Core
+  - React/RCTText (0.59.8):
+    - React/Core
+  - React/RCTVibration (0.59.8):
+    - React/Core
+  - React/RCTWebSocket (0.59.8):
+    - React/Core
+    - React/fishhook
+    - React/RCTBlob
+  - yoga (0.59.8.React)
+
+DEPENDENCIES:
+  - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
+  - "react-native-mapbox-gl (from `../node_modules/@react-native-mapbox-gl/maps`)"
+  - React/Core (from `../node_modules/react-native`)
+  - React/DevSupport (from `../node_modules/react-native`)
+  - React/RCTActionSheet (from `../node_modules/react-native`)
+  - React/RCTAnimation (from `../node_modules/react-native`)
+  - React/RCTBlob (from `../node_modules/react-native`)
+  - React/RCTCameraRoll (from `../node_modules/react-native`)
+  - React/RCTGeolocation (from `../node_modules/react-native`)
+  - React/RCTImage (from `../node_modules/react-native`)
+  - React/RCTLinkingIOS (from `../node_modules/react-native`)
+  - React/RCTNetwork (from `../node_modules/react-native`)
+  - React/RCTPushNotification (from `../node_modules/react-native`)
+  - React/RCTSettings (from `../node_modules/react-native`)
+  - React/RCTText (from `../node_modules/react-native`)
+  - React/RCTVibration (from `../node_modules/react-native`)
+  - React/RCTWebSocket (from `../node_modules/react-native`)
+  - yoga (from `../node_modules/react-native/ReactCommon/yoga/Yoga.podspec`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - boost-for-react-native
+    - DoubleConversion
+    - glog
+
+EXTERNAL SOURCES:
+  Folly:
+    :podspec: "../node_modules/react-native/third-party-podspecs/Folly.podspec"
+  React:
+    :path: "../node_modules/react-native"
+  react-native-mapbox-gl:
+    :path: "../node_modules/@react-native-mapbox-gl/maps"
+  yoga:
+    :path: "../node_modules/react-native/ReactCommon/yoga/Yoga.podspec"
+
+SPEC CHECKSUMS:
+  boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
+  DoubleConversion: e22e0762848812a87afd67ffda3998d9ef29170c
+  Folly: de497beb10f102453a1afa9edbf8cf8a251890de
+  glog: 1de0bb937dccdc981596d3b5825ebfb765017ded
+  React: 76e6aa2b87d05eb6cccb6926d72685c9a07df152
+  react-native-mapbox-gl: f4f013c081b114e871a4fb335bca44de70fcf74c
+  yoga: 92b2102c3d373d1a790db4ab761d2b0ffc634f64
+
+PODFILE CHECKSUM: 3a53e383ebbe7a4e37dcf114d591f0c5694eb668
+
+COCOAPODS: 1.6.1
