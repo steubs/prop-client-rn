@@ -45,7 +45,8 @@ end
     'RCTWebSocket',
     'RCTLinkingIOS'
   ]
-
+  pod 'react-native-camera', :path => '../node_modules/react-native-camera'
+  pod 'ReactNativePermissions', :path => '../node_modules/react-native-permissions'
   # Mapbox
   pod 'react-native-mapbox-gl', :path => '../node_modules/@react-native-mapbox-gl/maps'
 
