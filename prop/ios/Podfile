@@ -18,26 +18,7 @@ target 'prop' do
   pod 'Firebase/Messaging'
   pod 'Firebase/Performance'
   pod 'Firebase/Storage'
-  
-  target 'prop-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-    pod 'react-native-camera', :path => '../node_modules/react-native-camera'
-
-    pod 'ReactNativePermissions', :path => '../node_modules/react-native-permissions'
-
-    pod 'tipsi-stripe', :path => '../node_modules/tipsi-stripe'
-
-  end
-
-  target 'propTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-end
-
- # Flexbox Layout Manager Used By React Native
+  # Flexbox Layout Manager Used By React Native
   pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga/Yoga.podspec'
 
   # React Native
@@ -67,6 +48,25 @@ end
   # Third party
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
+  target 'prop-tvOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+    pod 'react-native-camera', :path => '../node_modules/react-native-camera'
+
+    pod 'ReactNativePermissions', :path => '../node_modules/react-native-permissions'
+
+    pod 'tipsi-stripe', :path => '../node_modules/tipsi-stripe'
+
+  end
+
+  target 'propTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
+
+ 
   post_install do |installer|
     installer.pods_project.targets.each do |target|
       if target.name == "React"

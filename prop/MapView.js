@@ -46,7 +46,7 @@ export default class MapView extends Component {
                     styleURL={Mapbox.StyleURL.Street}
                     style={styles.map}
                     logoEnabled={false}>
-
+                        
                 </Mapbox.MapView>
                 <View style={styles.bubbleContainer}>
                     <View style={styles.bubble}>
