@@ -55,6 +55,7 @@
 		D2B83CC5EE37405850737325 /* libPods-prop-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 482CA7C8832677441D3554DC /* libPods-prop-tvOSTests.a */; };
 		D426B229629B4B9DAA9001A7 /* libRNVectorIcons-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07783EB208424E8DA8200773 /* libRNVectorIcons-tvOS.a */; };
 		D7B42F8DA7B24FE99FB889C7 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 366D8AA33B3B474D8D91ACE7 /* Entypo.ttf */; };
+		E67D02F122ABCFBB00853A43 /* TPSStripe in Resources */ = {isa = PBXBuildFile; fileRef = E67D02C722ABCFBB00853A43 /* TPSStripe */; };
 		E6B493B922A7D885006B4464 /* libRNCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B493B422A7CFD5006B4464 /* libRNCamera.a */; };
 		EBFEB00447C54A10AAD94B73 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9AA6F0343C824F3185EDB0D3 /* Foundation.ttf */; };
 		EC878EAB918D4A7AAF281823 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B23D148783DC43A59DBE60C3 /* FontAwesome.ttf */; };
@@ -420,6 +421,7 @@
 		BFD47B11E7E1142A6E2684C7 /* Pods-propTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-propTests.debug.xcconfig"; path = "Target Support Files/Pods-propTests/Pods-propTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C99A3F47A29744F0AD13AD1E /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		DB6954DE8DAE46F7B186D8FB /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
+		E67D02C722ABCFBB00853A43 /* TPSStripe */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TPSStripe; path = "../node_modules/tipsi-stripe/ios/TPSStripe"; sourceTree = "<group>"; };
 		E6B4938922A7CFD5006B4464 /* RNCamera.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNCamera.xcodeproj; path = "../node_modules/react-native-camera/ios/RNCamera.xcodeproj"; sourceTree = "<group>"; };
 		E6D3475F22A66226004EEFAC /* ReactNativePermissions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativePermissions.xcodeproj; path = "../node_modules/react-native-permissions/ios/ReactNativePermissions.xcodeproj"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -652,6 +654,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				E67D02C722ABCFBB00853A43 /* TPSStripe */,
 				E6B4938922A7CFD5006B4464 /* RNCamera.xcodeproj */,
 				E6D3475F22A66226004EEFAC /* ReactNativePermissions.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
@@ -805,6 +808,7 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				C7466356F962E3E3DEBEC193 /* [CP] Embed Pods Frameworks */,
+				2007ADFF11511E3179910139 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1280,6 +1284,7 @@
 				EBFEB00447C54A10AAD94B73 /* Foundation.ttf in Resources */,
 				F5E33A6DAACF4E44BFC3ADC3 /* Ionicons.ttf in Resources */,
 				84BC5D03DD9F452B9BED58F0 /* MaterialCommunityIcons.ttf in Resources */,
+				E67D02F122ABCFBB00853A43 /* TPSStripe in Resources */,
 				8BAD3285727A448AAE82FD0D /* MaterialIcons.ttf in Resources */,
 				B5F8C1A76CBE4229A50B3F07 /* Octicons.ttf in Resources */,
 				63CAD160CA3C456DA4AB1575 /* SimpleLineIcons.ttf in Resources */,
@@ -1339,6 +1344,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2007ADFF11511E3179910139 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-prop/Pods-prop-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/Stripe/Stripe.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Stripe.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-prop/Pods-prop-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
