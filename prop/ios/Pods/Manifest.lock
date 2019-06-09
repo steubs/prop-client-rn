@@ -187,10 +187,32 @@ PODS:
     - React
   - React/Core (0.59.8):
     - yoga (= 0.59.8.React)
+  - React/CxxBridge (0.59.8):
+    - Folly (= 2018.10.22.00)
+    - React/Core
+    - React/cxxreact
+    - React/jsiexecutor
+  - React/cxxreact (0.59.8):
+    - boost-for-react-native (= 1.63.0)
+    - DoubleConversion
+    - Folly (= 2018.10.22.00)
+    - glog
+    - React/jsinspector
   - React/DevSupport (0.59.8):
     - React/Core
     - React/RCTWebSocket
   - React/fishhook (0.59.8)
+  - React/jsi (0.59.8):
+    - DoubleConversion
+    - Folly (= 2018.10.22.00)
+    - glog
+  - React/jsiexecutor (0.59.8):
+    - DoubleConversion
+    - Folly (= 2018.10.22.00)
+    - glog
+    - React/cxxreact
+    - React/jsi
+  - React/jsinspector (0.59.8)
   - React/RCTActionSheet (0.59.8):
     - React/Core
   - React/RCTAnimation (0.59.8):
@@ -242,6 +264,7 @@ DEPENDENCIES:
   - react-native-camera (from `../node_modules/react-native-camera`)
   - "react-native-mapbox-gl (from `../node_modules/@react-native-mapbox-gl/maps`)"
   - React/Core (from `../node_modules/react-native`)
+  - React/CxxBridge (from `../node_modules/react-native`)
   - React/DevSupport (from `../node_modules/react-native`)
   - React/RCTActionSheet (from `../node_modules/react-native`)
   - React/RCTAnimation (from `../node_modules/react-native`)
@@ -347,6 +370,6 @@ SPEC CHECKSUMS:
   tipsi-stripe: 2d0e33b5bb62168cd1f1777a904781725c5baf8a
   yoga: 92b2102c3d373d1a790db4ab761d2b0ffc634f64
 
-PODFILE CHECKSUM: b7941c9c07cb5e1bdd0e826b1df9a5f530cbc185
+PODFILE CHECKSUM: e76841f59f0a05ae84b503a01f537d62b67d5ef2
 
 COCOAPODS: 1.6.1

@@ -25,6 +25,7 @@ target 'prop' do
   pod 'React', path: '../node_modules/react-native', subspecs: [
     # Comment out any unneeded subspecs to reduce bundle size.
     'Core',
+    'CxxBridge',
     'DevSupport',
     'RCTActionSheet',
     'RCTAnimation',
@@ -46,6 +47,7 @@ target 'prop' do
   pod 'react-native-mapbox-gl', :path => '../node_modules/@react-native-mapbox-gl/maps'
 
   # Third party
+  
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
   target 'prop-tvOSTests' do
