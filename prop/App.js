@@ -7,8 +7,6 @@ Mapbox.setAccessToken(
 );
 
 const columbusCircleCoordinates = [-73.98197650909422, 40.768793007758816];
-const test1 = 54;
-const test2 = 55;
 const coordinate = [-121.2953, 37.9546];
 
 export default class MapView extends Component {
