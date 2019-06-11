@@ -5,7 +5,11 @@ target 'prop' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
 
+  # Pods for prop
+  # Stripe
   pod 'Stripe', '~> 14.0.0'
+
+  # Install additional dependencies
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Crash'
@@ -14,15 +18,10 @@ target 'prop' do
   pod 'Firebase/Messaging'
   pod 'Firebase/Performance'
   pod 'Firebase/Storage'
-
-  pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+  # Flexbox Layout Manager Used By React Native
   pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga/Yoga.podspec'
-  pod 'ReactNativePermissions', :path => '../node_modules/react-native-permissions'
-  pod 'react-native-camera', :path => '../node_modules/react-native-camera'
 
-  # Mapbox
-  pod 'react-native-mapbox-gl', :path => '../node_modules/@react-native-mapbox-gl/maps'
-  # Pods for prop
+  # React Native
   pod 'React', path: '../node_modules/react-native', subspecs: [
     # Comment out any unneeded subspecs to reduce bundle size.
     'Core',
@@ -42,9 +41,24 @@ target 'prop' do
     'RCTWebSocket',
     'RCTLinkingIOS'
   ]
+  pod 'react-native-camera', :path => '../node_modules/react-native-camera'
+  pod 'ReactNativePermissions', :path => '../node_modules/react-native-permissions'
+  # Mapbox
+  pod 'react-native-mapbox-gl', :path => '../node_modules/@react-native-mapbox-gl/maps'
+
+  # Third party
+  
+  pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+
   target 'prop-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'react-native-camera', :path => '../node_modules/react-native-camera'
+
+    pod 'ReactNativePermissions', :path => '../node_modules/react-native-permissions'
+
+    pod 'tipsi-stripe', :path => '../node_modules/tipsi-stripe'
+
   end
 
   target 'propTests' do
@@ -54,4 +68,11 @@ target 'prop' do
 
 end
 
-
+ 
+  post_install do |installer|
+    installer.pods_project.targets.each do |target|
+      if target.name == "React"
+        target.remove_from_project
+      end
+    end
+  end

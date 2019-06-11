@@ -1,42 +1,30 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, Image } from 'react-native';
-import Mapbox from '@mapbox/react-native-mapbox-gl';
+import Mapbox from '@react-native-mapbox-gl/maps';
 
 Mapbox.setAccessToken(
     'pk.eyJ1IjoianM5NyIsImEiOiJjandoOTRsY28wdno1NDludnRubDdyeTJlIn0.VgsUXfkp1wI93v1QP5dAbA'
 );
 
-const columbusCircleCoordinates = [
-    -73.98197650909422, 40.768793007758816
-];
-
-const coordinates = [
-    [-121.2953, 37.9546],
-    [-73.96682739257812, 40.761560925502806],
-    [-74.00751113891602, 40.746346606483826]
-];
+const bikeList = [[-121.2953, 37.9546], [-121.2955, 37.9546], [-121.2953, 37.9548]];
+const coordinate = [-121.2953, 37.9546];
 
 export default class MapView extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            coordinates: coordinates
+            coordinates: coordinate
+
         };
     }
-
-    renderAnnotations() {
-        this.map.moveTo([lng, lat])
-        return (
-            <Mapbox.PointAnnotation
-                key="pointAnnotation"
-                id="pointAnnotation"
-                coordinate={columbusCircleCoordinates}>
-                <View style={styles.annotationContainer}>
-                    <View style={styles.annotationFill} />
-                </View>
-                <Mapbox.Callout title="An annotation here!" />
-            </Mapbox.PointAnnotation>
-        );
+    renderBikeList(bikeList) {
+        return bikeList.map((bikeCoordinate) => {
+            return (
+                <Mapbox.PointAnnotation
+                    coordinate={bikeCoordinate}>
+                </Mapbox.PointAnnotation>
+            );
+        });
     }
 
     render() {
@@ -45,12 +33,19 @@ export default class MapView extends Component {
                 <Mapbox.MapView
                     styleURL={Mapbox.StyleURL.Street}
                     style={styles.map}
-                    logoEnabled={false}>
-                        
+                    logoEnabled={false}
+                >
+                    <Mapbox.Camera
+                        centerCoordinate={coordinate}
+                        zoomLevel={18}
+                    />
+                    {this.renderBikeList(bikeList)}
+
+
                 </Mapbox.MapView>
                 <View style={styles.bubbleContainer}>
                     <View style={styles.bubble}>
-                        <Text style={{ textAlign: 'center', fontSize: 22 }}>
+                        <Text style={{ textAlign: 'center', fontSize: 19 }}>
                             {'Ride a water bike \n$2 to start, $0.30 per min'}
                         </Text>
                         <Image
@@ -117,8 +112,8 @@ const styles = StyleSheet.create({
         //justifyContent: 'space-between'
     },
     logo: {
-        width: 140,
-        height: 100
+        width: 120,
+        height: 80
         //alignContent: 'center'
     },
     buttonStyle: {
