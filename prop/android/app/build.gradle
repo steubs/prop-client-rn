@@ -138,6 +138,8 @@ android {
 }
 
 dependencies {
+    implementation project(':amazon-cognito-identity-js')
+    implementation project(':react-native-gesture-handler')
     implementation project(':tipsi-stripe')
     implementation project(':react-native-camera')
     implementation project(':react-native-vector-icons')

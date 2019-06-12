@@ -45,6 +45,10 @@ target 'prop' do
   target 'prop-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+
+    pod 'RNAWSCognito', :path => '../node_modules/amazon-cognito-identity-js'
+
   end
 
   target 'propTests' do

@@ -1,18 +1,18 @@
 {
     "dev": {
         "awscloudformation": {
-            "AuthRoleName": "prop1-dev-20190603183404-authRole",
-            "UnauthRoleArn": "arn:aws:iam::510658186455:role/prop1-dev-20190603183404-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::510658186455:role/prop1-dev-20190603183404-authRole",
+            "AuthRoleName": "prop-dev-20190611235304-authRole",
+            "UnauthRoleArn": "arn:aws:iam::510658186455:role/prop-dev-20190611235304-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::510658186455:role/prop-dev-20190611235304-authRole",
             "Region": "us-east-1",
-            "DeploymentBucketName": "prop1-dev-20190603183404-deployment",
-            "UnauthRoleName": "prop1-dev-20190603183404-unauthRole",
-            "StackName": "prop1-dev-20190603183404",
-            "StackId": "arn:aws:cloudformation:us-east-1:510658186455:stack/prop1-dev-20190603183404/d717e920-8668-11e9-89fa-1262c1c6cf8e"
+            "DeploymentBucketName": "prop-dev-20190611235304-deployment",
+            "UnauthRoleName": "prop-dev-20190611235304-unauthRole",
+            "StackName": "prop-dev-20190611235304",
+            "StackId": "arn:aws:cloudformation:us-east-1:510658186455:stack/prop-dev-20190611235304/bab31e40-8cde-11e9-b122-0e3e6f4b77b8"
         },
         "categories": {
             "auth": {
-                "cognito8f4695a4": {}
+                "cognito44101414": {}
             }
         }
     }

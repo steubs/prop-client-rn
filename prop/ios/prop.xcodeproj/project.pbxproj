@@ -56,6 +56,8 @@
 		D426B229629B4B9DAA9001A7 /* libRNVectorIcons-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07783EB208424E8DA8200773 /* libRNVectorIcons-tvOS.a */; };
 		D7B42F8DA7B24FE99FB889C7 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 366D8AA33B3B474D8D91ACE7 /* Entypo.ttf */; };
 		E67D02F122ABCFBB00853A43 /* TPSStripe in Resources */ = {isa = PBXBuildFile; fileRef = E67D02C722ABCFBB00853A43 /* TPSStripe */; };
+		E69F99A422B0F97B009B4F8D /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E69F998B22B0F467009B4F8D /* libRNGestureHandler.a */; };
+		E69F99D422B10F92009B4F8D /* libRNAWSCognito.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E69F99D322B10F79009B4F8D /* libRNAWSCognito.a */; };
 		E6B493B922A7D885006B4464 /* libRNCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6B493B422A7CFD5006B4464 /* libRNCamera.a */; };
 		EBFEB00447C54A10AAD94B73 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9AA6F0343C824F3185EDB0D3 /* Foundation.ttf */; };
 		EC878EAB918D4A7AAF281823 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B23D148783DC43A59DBE60C3 /* FontAwesome.ttf */; };
@@ -310,6 +312,27 @@
 			remoteGlobalIDString = 358F4ED71D1E81A9004DF814;
 			remoteInfo = RCTBlob;
 		};
+		E69F998A22B0F467009B4F8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E69F995E22B0F467009B4F8D /* RNGestureHandler.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNGestureHandler;
+		};
+		E69F998C22B0F467009B4F8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E69F995E22B0F467009B4F8D /* RNGestureHandler.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B5C32A36220C603B000FFB8D;
+			remoteInfo = "RNGestureHandler-tvOS";
+		};
+		E69F99D222B10F79009B4F8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E69F99CE22B10F79009B4F8D /* RNAWSCognito.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNAWSCognito;
+		};
 		E6B493B322A7CFD5006B4464 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E6B4938922A7CFD5006B4464 /* RNCamera.xcodeproj */;
@@ -422,6 +445,8 @@
 		C99A3F47A29744F0AD13AD1E /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		DB6954DE8DAE46F7B186D8FB /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		E67D02C722ABCFBB00853A43 /* TPSStripe */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TPSStripe; path = "../node_modules/tipsi-stripe/ios/TPSStripe"; sourceTree = "<group>"; };
+		E69F995E22B0F467009B4F8D /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNGestureHandler.xcodeproj; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; };
+		E69F99CE22B10F79009B4F8D /* RNAWSCognito.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNAWSCognito.xcodeproj; path = "../node_modules/amazon-cognito-identity-js/ios/RNAWSCognito.xcodeproj"; sourceTree = "<group>"; };
 		E6B4938922A7CFD5006B4464 /* RNCamera.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNCamera.xcodeproj; path = "../node_modules/react-native-camera/ios/RNCamera.xcodeproj"; sourceTree = "<group>"; };
 		E6D3475F22A66226004EEFAC /* ReactNativePermissions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativePermissions.xcodeproj; path = "../node_modules/react-native-permissions/ios/ReactNativePermissions.xcodeproj"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -448,6 +473,8 @@
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				11D1A2F320CAFA9E000508D9 /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
+				E69F99D422B10F92009B4F8D /* libRNAWSCognito.a in Frameworks */,
+				E69F99A422B0F97B009B4F8D /* libRNGestureHandler.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
@@ -654,6 +681,8 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				E69F99CE22B10F79009B4F8D /* RNAWSCognito.xcodeproj */,
+				E69F995E22B0F467009B4F8D /* RNGestureHandler.xcodeproj */,
 				E67D02C722ABCFBB00853A43 /* TPSStripe */,
 				E6B4938922A7CFD5006B4464 /* RNCamera.xcodeproj */,
 				E6D3475F22A66226004EEFAC /* ReactNativePermissions.xcodeproj */,
@@ -740,6 +769,23 @@
 				27D4F9C14B834965B8AE7BB6 /* Zocial.ttf */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		E69F995F22B0F467009B4F8D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E69F998B22B0F467009B4F8D /* libRNGestureHandler.a */,
+				E69F998D22B0F467009B4F8D /* libRNGestureHandler-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E69F99CF22B10F79009B4F8D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E69F99D322B10F79009B4F8D /* libRNAWSCognito.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		E6B4938A22A7CFD5006B4464 /* Products */ = {
@@ -950,8 +996,16 @@
 					ProjectRef = E6D3475F22A66226004EEFAC /* ReactNativePermissions.xcodeproj */;
 				},
 				{
+					ProductGroup = E69F99CF22B10F79009B4F8D /* Products */;
+					ProjectRef = E69F99CE22B10F79009B4F8D /* RNAWSCognito.xcodeproj */;
+				},
+				{
 					ProductGroup = E6B4938A22A7CFD5006B4464 /* Products */;
 					ProjectRef = E6B4938922A7CFD5006B4464 /* RNCamera.xcodeproj */;
+				},
+				{
+					ProductGroup = E69F995F22B0F467009B4F8D /* Products */;
+					ProjectRef = E69F995E22B0F467009B4F8D /* RNGestureHandler.xcodeproj */;
 				},
 				{
 					ProductGroup = E6D21B8122A610C20085DD26 /* Products */;
@@ -1198,6 +1252,27 @@
 			fileType = archive.ar;
 			path = libRCTBlob.a;
 			remoteRef = ADBDB9261DFEBF0700ED6528 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E69F998B22B0F467009B4F8D /* libRNGestureHandler.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNGestureHandler.a;
+			remoteRef = E69F998A22B0F467009B4F8D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E69F998D22B0F467009B4F8D /* libRNGestureHandler-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRNGestureHandler-tvOS.a";
+			remoteRef = E69F998C22B0F467009B4F8D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E69F99D322B10F79009B4F8D /* libRNAWSCognito.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNAWSCognito.a;
+			remoteRef = E69F99D222B10F79009B4F8D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		E6B493B422A7CFD5006B4464 /* libRNCamera.a */ = {

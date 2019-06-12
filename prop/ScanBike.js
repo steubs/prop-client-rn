@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, Text, View } from 'react-native';
 import { RNCamera } from 'react-native-camera';
 
-class ProductScanRNCamera extends Component {
+class ScanBike extends Component {
 
     constructor(props) {
         super(props);
@@ -132,4 +132,4 @@ const styles = {
     }
 };
 
-export default ProductScanRNCamera;
+export default ScanBike;

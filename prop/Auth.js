@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View, Modal } from 'react-native';
 import Amplify, { Auth } from 'aws-amplify';
 import { Input, Button, ButtonGroup } from 'react-native-elements';
 import aws_exports from './aws-exports';
-
 Amplify.configure(aws_exports);
 
-export default class Authentication extends React.Component {
+export default class Authentication extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -37,7 +36,7 @@ export default class Authentication extends React.Component {
         const { email, password } = this.state;
         Auth.signIn(email, password)
             // If we are successful, navigate to Home screen
-            .then(console.error("Success"))
+            .then(user => this.props.navigation.navigate('MapView'))
             // On failure, display error in console
             .catch(err => console.error(err));
     }
@@ -53,7 +52,10 @@ export default class Authentication extends React.Component {
                 attributes: { email },
             })
                 // On success, show Confirmation Code Modal
-                .then(() => this.setState({ modalVisible: true }))
+                .then(() => {
+                    this.setState({ modalVisible: true });
+                    this.props.navigation.navigate('MapView');
+                })
                 // On failure, display error in console
                 .catch(err => console.log(err));
         } else {
@@ -66,7 +68,7 @@ export default class Authentication extends React.Component {
         Auth.confirmSignUp(email, confirmationCode, {})
             .then(() => {
                 this.setState({ modalVisible: false });
-                this.props.navigation.navigate('Home')
+                this.props.navigation.navigate('MapView')
             })
             .catch(err => console.log(err));
     }

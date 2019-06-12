@@ -1,135 +1,73 @@
-import React, { Component } from 'react';
-import { Button, Text, View } from 'react-native';
-import { RNCamera } from 'react-native-camera';
-
-class ProductScanRNCamera extends Component {
-
-  constructor(props) {
-    super(props);
-    this.camera = null;
-    this.barcodeCodes = [];
-
-    this.state = {
-      camera: {
-        type: RNCamera.Constants.Type.back,
-        flashMode: RNCamera.Constants.FlashMode.auto,
-        barcodeFinderVisible: true
-      }
-    };
-  }
-
-  onBarCodeRead(scanResult) {
-    if (scanResult.data != null) {
-      console.error(scanResult.data);
-    }
-    return;
-  }
-
-  async takePicture() {
-    if (this.camera) {
-      const options = { quality: 0.5, base64: true };
-      const data = await this.camera.takePictureAsync(options);
-      console.log(data.uri);
-    }
-  }
-
-  pendingView() {
-    return (
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: 'lightgreen',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <Text>Waiting</Text>
-      </View>
-    );
-  }
-
+import React from 'react';
+import { Button, View, Text } from 'react-native';
+import { createAppContainer, createStackNavigator } from 'react-navigation';
+import MapView from './MapView'
+import Authentication from './Auth'
+import ScanBike from './ScanBike'
+class HomeScreen extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <RNCamera
-          ref={ref => {
-            this.camera = ref;
-          }}
-          captureAudio={false}
-          barcodeFinderVisible={this.state.camera.barcodeFinderVisible}
-          barcodeFinderWidth={280}
-          barcodeFinderHeight={220}
-          barcodeFinderBorderColor="white"
-          barcodeFinderBorderWidth={2}
-          defaultTouchToFocus
-          flashMode={this.state.camera.flashMode}
-          mirrorImage={false}
-          onBarCodeRead={this.onBarCodeRead.bind(this)}
-          onFocusChanged={() => { }}
-          onZoomChanged={() => { }}
-          androidCameraPermissionOptions={{
-            title: 'Permission to use camera',
-            message: 'We need your permission to use your camera',
-            buttonPositive: 'Ok',
-            buttonNegative: 'Cancel',
-          }}
-          style={styles.preview}
-          type={this.state.camera.type}
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Home Screen</Text>
+        <Button
+          title="Go to auth"
+          onPress={() => this.props.navigation.navigate('Authentication')}
         />
-        <View style={[styles.overlay, styles.bottomOverlay]}>
-          <Button
-            onPress={() => { console.log('scan clicked'); }}
-            style={styles.enterBarcodeManualButton}
-            title="Back"
-          />
-        </View>
       </View>
     );
   }
 }
 
-const styles = {
-  container: {
-    flex: 1
-  },
-  preview: {
-    flex: 1,
-    justifyContent: 'flex-end',
-    alignItems: 'center'
-  },
-  overlay: {
-    position: 'absolute',
-    padding: 16,
-    right: 0,
-    left: 0,
-    alignItems: 'center'
-  },
-  topOverlay: {
-    top: 0,
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center'
-  },
-  bottomOverlay: {
-    bottom: 0,
-    backgroundColor: 'rgba(0,0,0,0.4)',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  enterBarcodeManualButton: {
-    padding: 15,
-    backgroundColor: 'white',
-    borderRadius: 40
-  },
-  scanScreenMessage: {
-    fontSize: 14,
-    color: 'white',
-    textAlign: 'center',
-    alignItems: 'center',
-    justifyContent: 'center'
+class DetailsScreen extends React.Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Details Screen</Text>
+        <Button
+          title="Go to mapview"
+          onPress={() => this.props.navigation.push('MapView')}
+        />
+        <Button
+          title="Go to auth"
+          onPress={() => this.props.navigation.push('Authentication')}
+        />
+        <Button
+          title="Go back"
+          onPress={() => this.props.navigation.goBack()}
+        />
+      </View>
+    );
   }
-};
+}
 
-export default ProductScanRNCamera;
+const RootStack = createStackNavigator(
+  {
+    Home: {
+      screen: HomeScreen,
+    },
+    Details: {
+      screen: DetailsScreen,
+    },
+    MapView: {
+      screen: MapView
+    },
+    Authentication: {
+      screen: Authentication
+    },
+    ScanBike: {
+      screen: ScanBike
+    },
+
+  },
+  {
+    initialRouteName: 'Home',
+  }
+);
+
+const AppContainer = createAppContainer(RootStack);
+
+export default class App extends React.Component {
+  render() {
+    return <AppContainer />;
+  }
+}

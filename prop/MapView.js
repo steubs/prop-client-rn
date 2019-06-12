@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, Image } from 'react-native';
+import { Button, View, StyleSheet, Text, Image } from 'react-native';
 import Mapbox from '@react-native-mapbox-gl/maps';
 
 Mapbox.setAccessToken(
@@ -54,7 +54,11 @@ export default class MapView extends Component {
                         />
                         <View style={styles.buttons}>
                             <View style={styles.buttonStyle}>
-                                <Text style={{ fontSize: 20 }}>Scan</Text>
+                                <Button
+                                    title="Scan"
+                                    onPress={() => this.props.navigation.navigate('ScanBike')}
+                                    color="white"
+                                />
                             </View>
                         </View>
                     </View>
