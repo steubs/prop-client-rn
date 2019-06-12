@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Button, View, StyleSheet, Text, Image } from 'react-native';
 import Mapbox from '@react-native-mapbox-gl/maps';
+import Amplify, { API } from 'aws-amplify';
+import aws_exports from './aws-exports';
+Amplify.configure(aws_exports);
 
 Mapbox.setAccessToken(
     'pk.eyJ1IjoianM5NyIsImEiOiJjandoOTRsY28wdno1NDludnRubDdyeTJlIn0.VgsUXfkp1wI93v1QP5dAbA'
@@ -13,11 +16,35 @@ export default class MapView extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            coordinates: coordinate
+            apiResp: {},
+            bikesList: [],
 
         };
     }
+    componentDidMount() {
+        this.getBike();
+    }
+    async getBike() {
+        const path = "/items/object/" + "stockton";
+        try {
+            const apiResponse = await API.get("propApiTest2", path);
+            //console.error("response from getting note: " + JSON.stringify(apiResponse.bikes.bike_1));
+            this.setState(previousState => (
+                { apiResp: apiResponse }
+            )
+        } catch (e) {
+            console.log(e);
+        }
+    }
+    handleChangeBikeId = (id) => {
+        this.setState({ bikeId: id });
+    }
+
     renderBikeList(bikeList) {
+        let bike_json = this.state.apiResp.bikes;
+        for (var bike in bike_json) {
+            this.state.bikesList.push([bike.coord_x, bike.coord_y]);
+        }
         return bikeList.map((bikeCoordinate) => {
             return (
                 <Mapbox.PointAnnotation

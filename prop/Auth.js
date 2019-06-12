@@ -32,6 +32,7 @@ export default class Authentication extends Component {
         const newIndex = this.state.selectedIndex === 0 ? 1 : 0
         this.setState({ selectedIndex: newIndex })
     }
+    //https://github.com/AirLabsTeam/react-native-aws-cognito-js/issues/20
     handleSignIn = () => {
         const { email, password } = this.state;
         Auth.signIn(email, password)

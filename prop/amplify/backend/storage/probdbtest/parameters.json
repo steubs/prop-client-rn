@@ -1,0 +1,5 @@
+{
+    "tableName": "probdbtest",
+    "partitionKeyName": "bike_col",
+    "partitionKeyType": "S"
+}

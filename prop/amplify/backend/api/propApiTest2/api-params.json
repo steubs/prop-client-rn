@@ -1,0 +1,34 @@
+{
+    "paths": [
+        {
+            "name": "/items",
+            "lambdaFunction": "propLambdaTest2",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "propApiTest2",
+    "apiName": "propApiTest2",
+    "functionArns": [
+        {
+            "lambdaFunction": "propLambdaTest2"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "prop-dev-20190611235304-authRole",
+        "unAuthRoleName": "prop-dev-20190611235304-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "propLambdaTest2",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
