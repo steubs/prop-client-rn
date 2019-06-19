@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Button, Text, View } from 'react-native';
 import { RNCamera } from 'react-native-camera';
-
+import Amplify, { API } from 'aws-amplify';
+import aws_exports from './aws-exports';
+Amplify.configure(aws_exports);
 class ScanBike extends Component {
 
     constructor(props) {
@@ -14,13 +16,30 @@ class ScanBike extends Component {
                 type: RNCamera.Constants.Type.back,
                 flashMode: RNCamera.Constants.FlashMode.auto,
                 barcodeFinderVisible: true
-            }
+            },
+            apiResp: {},
         };
     }
 
-    onBarCodeRead(scanResult) {
+    async onBarCodeRead(scanResult) {
         if (scanResult.data != null) {
-            console.error(scanResult.data);
+            const path = "/items/object/" + "stockton";
+            try {
+                const apiResponse = await API.get("propApiTest2", path);
+                //console.error("response from getting note: " + JSON.stringify(apiResponse.bikes.bike_1));
+                this.setState(previousState => (
+                    { apiResp: apiResponse }
+                ))
+                let bike_json = apiResponse.bikes;
+                for (let bike in bike_json) {
+                    console.error(bike.link);
+                    if (bike.link == scanResult.data) {
+                        console.error("asf");
+                    }
+                }
+            } catch (e) {
+                console.log(e);
+            }
         }
         return;
     }

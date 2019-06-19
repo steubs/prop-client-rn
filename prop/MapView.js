@@ -9,7 +9,7 @@ Mapbox.setAccessToken(
     'pk.eyJ1IjoianM5NyIsImEiOiJjandoOTRsY28wdno1NDludnRubDdyeTJlIn0.VgsUXfkp1wI93v1QP5dAbA'
 );
 
-const bikeList = [[-121.2953, 37.9546], [-121.2955, 37.9546], [-121.2953, 37.9548]];
+//const bikeList = [[-121.2953, 37.9546], [-121.2955, 37.9546], [-121.2953, 37.9548]];
 const coordinate = [-121.2953, 37.9546];
 
 export default class MapView extends Component {
@@ -17,21 +17,19 @@ export default class MapView extends Component {
         super(props);
         this.state = {
             apiResp: {},
-            bikesList: [],
-
+            bikeList: [],
         };
     }
-    componentDidMount() {
+    async componentDidMount() {
         this.getBike();
     }
     async getBike() {
         const path = "/items/object/" + "stockton";
         try {
             const apiResponse = await API.get("propApiTest2", path);
-            //console.error("response from getting note: " + JSON.stringify(apiResponse.bikes.bike_1));
-            this.setState(previousState => (
-                { apiResp: apiResponse }
-            )
+            console.error("response from getting note: " + apiResponse);
+            //this.setState(apiResp: apiResponse);
+
         } catch (e) {
             console.log(e);
         }
@@ -42,8 +40,9 @@ export default class MapView extends Component {
 
     renderBikeList(bikeList) {
         let bike_json = this.state.apiResp.bikes;
-        for (var bike in bike_json) {
+        for (let bike in bike_json) {
             this.state.bikesList.push([bike.coord_x, bike.coord_y]);
+            //console.error(bike.coord_x);
         }
         return bikeList.map((bikeCoordinate) => {
             return (
@@ -66,9 +65,7 @@ export default class MapView extends Component {
                         centerCoordinate={coordinate}
                         zoomLevel={18}
                     />
-                    {this.renderBikeList(bikeList)}
-
-
+                    {this.renderBikeList(this.state.bikeList)}
                 </Mapbox.MapView>
                 <View style={styles.bubbleContainer}>
                     <View style={styles.bubble}>

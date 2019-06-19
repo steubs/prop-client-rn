@@ -64,7 +64,7 @@ const RootStack = createStackNavigator(
 
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'MapView',
   }
 );
 
