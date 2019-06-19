@@ -41,6 +41,21 @@
 					]
 				}
 			]
+		},
+		"proplambda10": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"dependsOn": [
+				{
+					"category": "storage",
+					"resourceName": "probdbtest",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
 		}
 	},
 	"api": {
@@ -65,6 +80,20 @@
 				{
 					"category": "function",
 					"resourceName": "propLambdaTest2",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		},
+		"propapi10": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "proplambda10",
 					"attributes": [
 						"Name",
 						"Arn"

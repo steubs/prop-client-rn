@@ -23,17 +23,23 @@ class ScanBike extends Component {
 
     async onBarCodeRead(scanResult) {
         if (scanResult.data != null) {
-            const path = "/items/object/" + "stockton";
+            const path = "/bikes/object/" + "stockton";
             try {
-                const apiResponse = await API.get("propApiTest2", path);
+                const apiResponse = await API.get("propapi10", path);
                 //console.error("response from getting note: " + JSON.stringify(apiResponse.bikes.bike_1));
-                this.setState(previousState => (
-                    { apiResp: apiResponse }
-                ))
-                let bike_json = apiResponse.bikes;
-                for (let bike in bike_json) {
-                    console.error(bike.link);
-                    if (bike.link == scanResult.data) {
+                this.setState({
+                    apiResp: apiResponse
+                });
+                let bike_json = this.state.apiResp.bikes;
+                //console.error(JSON.stringify(bike_json.bike_2));
+                //console.error(JSON.stringify(bike_json[bike_1]));
+                let bikes = [];
+                for (var bike in bike_json) {
+                    //console.error(JSON.stringify(bike_json[bike]));
+                    let bike_n = bike_json[bike];
+                    //console.warn(JSON.stringify(bike_n));
+                    let bike_link = bike_n.link;
+                    if(bike_link == scanResult.data){
                         console.error("asf");
                     }
                 }

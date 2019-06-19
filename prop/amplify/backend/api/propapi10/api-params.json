@@ -1,0 +1,34 @@
+{
+    "paths": [
+        {
+            "name": "/bikes",
+            "lambdaFunction": "proplambda10",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "propapi10",
+    "apiName": "propapi10",
+    "functionArns": [
+        {
+            "lambdaFunction": "proplambda10"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "prop-dev-20190611235304-authRole",
+        "unAuthRoleName": "prop-dev-20190611235304-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "proplambda10",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

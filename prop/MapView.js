@@ -9,7 +9,6 @@ Mapbox.setAccessToken(
     'pk.eyJ1IjoianM5NyIsImEiOiJjandoOTRsY28wdno1NDludnRubDdyeTJlIn0.VgsUXfkp1wI93v1QP5dAbA'
 );
 
-//const bikeList = [[-121.2953, 37.9546], [-121.2955, 37.9546], [-121.2953, 37.9548]];
 const coordinate = [-121.2953, 37.9546];
 
 export default class MapView extends Component {
@@ -20,30 +19,43 @@ export default class MapView extends Component {
             bikeList: [],
         };
     }
-    async componentDidMount() {
-        this.getBike();
-    }
-    async getBike() {
-        const path = "/items/object/" + "stockton";
+    async componentWillMount() {
+        const path = "/bikes/object/" + "stockton2";
         try {
-            const apiResponse = await API.get("propApiTest2", path);
-            console.error("response from getting note: " + apiResponse);
-            //this.setState(apiResp: apiResponse);
-
+            const apiResponse = await API.get("propapi10", path);
+            //console.error(apiResponse);
+            this.setState({
+                apiResp: apiResponse
+            });
         } catch (e) {
             console.log(e);
         }
+        //console.error(JSON.stringify(this.state.apiResp.bikes));
+        let bike_json = this.state.apiResp.bikes;
+        //console.error(JSON.stringify(bike_json.bike_2));
+        //console.error(JSON.stringify(bike_json[bike_1]));
+        let bikes = [];
+        for (var bike in bike_json) {
+            //console.error(JSON.stringify(bike_json[bike]));
+            let bike_n = bike_json[bike];
+            //console.warn(JSON.stringify(bike_n));
+            let bike_coord_x = bike_n.coord_x;
+            //console.warn(JSON.stringify(bike_coord_x));
+            let bike_coord_y = bike_n.coord_y;
+
+            bikes.push([bike_coord_x, bike_coord_y]);
+            //console.warn(this.state.bikeList[0]);
+        }
+        this.setState({
+            bikeList: bikes
+        });
     }
     handleChangeBikeId = (id) => {
         this.setState({ bikeId: id });
     }
 
     renderBikeList(bikeList) {
-        let bike_json = this.state.apiResp.bikes;
-        for (let bike in bike_json) {
-            this.state.bikesList.push([bike.coord_x, bike.coord_y]);
-            //console.error(bike.coord_x);
-        }
+        console.warn(this.state.bikeList[0]);
         return bikeList.map((bikeCoordinate) => {
             return (
                 <Mapbox.PointAnnotation
@@ -54,6 +66,7 @@ export default class MapView extends Component {
     }
 
     render() {
+
         return (
             <View style={styles.container}>
                 <Mapbox.MapView
