@@ -1,16 +1,18 @@
 import React from 'react';
 import { Button, View, Text } from 'react-native';
 import { createAppContainer, createStackNavigator } from 'react-navigation';
-import MapView from './MapView'
-import Authentication from './Auth'
-import ScanBike from './ScanBike'
+import MapView from './MapView';
+import Authentication from './Auth';
+import ScanBike from './ScanBike';
+import Payment2 from './Payment2'
+
 class HomeScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>Home Screen</Text>
         <Button
-          title="Go to auth"
+          title="Go to auasfasfasfasdth"
           onPress={() => this.props.navigation.navigate('Authentication')}
         />
         <Button
@@ -61,10 +63,12 @@ const RootStack = createStackNavigator(
     ScanBike: {
       screen: ScanBike
     },
-
+    Payment2: {
+      screen: Payment2
+    },
   },
   {
-    initialRouteName: 'MapView',
+    initialRouteName: 'Payment2',
   }
 );
 

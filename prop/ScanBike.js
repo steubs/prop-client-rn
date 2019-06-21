@@ -39,8 +39,8 @@ class ScanBike extends Component {
                     let bike_n = bike_json[bike];
                     //console.warn(JSON.stringify(bike_n));
                     let bike_link = bike_n.link;
-                    if(bike_link == scanResult.data){
-                        console.error("asf");
+                    if (bike_link == scanResult.data) {
+                        this.props.navigation.navigate('Payment')
                     }
                 }
             } catch (e) {
