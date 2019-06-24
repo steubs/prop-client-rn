@@ -4,7 +4,8 @@ import { createAppContainer, createStackNavigator } from 'react-navigation';
 import MapView from './MapView';
 import Authentication from './Auth';
 import ScanBike from './ScanBike';
-import Payment2 from './Payment2'
+import Payment2 from './Payment2';
+import RideView from './RideView';
 
 class HomeScreen extends React.Component {
   render() {
@@ -66,9 +67,12 @@ const RootStack = createStackNavigator(
     Payment2: {
       screen: Payment2
     },
+    RideView: {
+      screen: RideView
+    },
   },
   {
-    initialRouteName: 'Payment2',
+    initialRouteName: 'RideView',
   }
 );
 

@@ -5,10 +5,7 @@ import stripe from 'tipsi-stripe'
 import Header from './components/Header'
 import MenuItem from './components/MenuItem'
 import CardFormScreen from './scenes/CardFormScreen'
-import CustomCardScreen from './scenes/CustomCardScreen'
-import CustomBankScreen from './scenes/CustomBankScreen'
-import CardTextFieldScreen from './scenes/CardTextFieldScreen'
-import SourceScreen from './scenes/SourceScreen'
+
 import testID from './utils/testID'
 
 stripe.setOptions({
@@ -22,15 +19,7 @@ export default class Payment2 extends PureComponent {
         index: 0,
         isDrawerOpen: false,
         routes: [
-            Platform.select({
-                ios: ApplePayScreen,
-                android: AndroidPayScreen,
-            }),
             CardFormScreen,
-            CustomCardScreen,
-            CustomBankScreen,
-            CardTextFieldScreen,
-            SourceScreen,
         ].filter(item => item),
     }
 
@@ -77,22 +66,9 @@ export default class Payment2 extends PureComponent {
     )
 
     render() {
-        const Scene = this.getCurrentScene()
-
+        //const Scene = this.getCurrentScene()
         return (
-            <View style={styles.container}>
-                <View style={styles.statusbar} />
-                <Header title={`Example: ${Scene.title}`} onMenuPress={this.handleMenuPress} />
-                <DrawerLayout
-                    drawerWidth={200}
-                    drawerPosition={DrawerLayout.positions.Left}
-                    renderNavigationView={this.renderNavigation}
-                    onDrawerOpen={this.handleDrawerOpen}
-                    onDrawerClose={this.handleDrawerClose}
-                    ref={this.handleDrawerRef}>
-                    <Scene />
-                </DrawerLayout>
-            </View>
+            <CardFormScreen />
         )
     }
 }
@@ -102,9 +78,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#f5f5f5',
     },
-    statusbar: {
-        height: Platform.select({ ios: 20, android: 0 }),
-    },
+
     drawer: {
         flex: 1,
         backgroundColor: '#ffffff',

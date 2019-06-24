@@ -53,6 +53,7 @@
 		C538B19FB1FC43519552C865 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5C7F7ECDE184489093ADE4C3 /* AntDesign.ttf */; };
 		D426B229629B4B9DAA9001A7 /* libRNVectorIcons-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07783EB208424E8DA8200773 /* libRNVectorIcons-tvOS.a */; };
 		D7B42F8DA7B24FE99FB889C7 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 366D8AA33B3B474D8D91ACE7 /* Entypo.ttf */; };
+		E604B45D22BCB7F200166651 /* libTPSStripe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E653155122BC971A00C52AFC /* libTPSStripe.a */; };
 		E67D02F122ABCFBB00853A43 /* TPSStripe in Resources */ = {isa = PBXBuildFile; fileRef = E67D02C722ABCFBB00853A43 /* TPSStripe */; };
 		E69F99A422B0F97B009B4F8D /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E69F998B22B0F467009B4F8D /* libRNGestureHandler.a */; };
 		E69F99D422B10F92009B4F8D /* libRNAWSCognito.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E69F99D322B10F79009B4F8D /* libRNAWSCognito.a */; };
@@ -471,6 +472,7 @@
 			files = (
 				11D1A2F320CAFA9E000508D9 /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
+				E604B45D22BCB7F200166651 /* libTPSStripe.a in Frameworks */,
 				E69F99D422B10F92009B4F8D /* libRNAWSCognito.a in Frameworks */,
 				E69F99A422B0F97B009B4F8D /* libRNGestureHandler.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
